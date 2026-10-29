@@ -1,0 +1,67 @@
+{
+  "name": "jira-board",
+  "version": "0.1.0",
+  "description": "A live Jira board in a pane beside the chat: columns, cards, issue details and status moves, through your connected Atlassian MCP server.",
+  "author": {
+    "name": "Uplift Foundation"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Uplift-Foundation/jira-board-mod",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "site": {
+      "type": "string",
+      "title": "Jira site",
+      "description": "Your Atlassian site's hostname, as in its URLs (yourcompany.atlassian.net). Required.",
+      "default": ""
+    },
+    "project": {
+      "type": "string",
+      "title": "Project key",
+      "description": "The key of the project whose board is drawn (the PROJ in PROJ-123). Required.",
+      "default": ""
+    },
+    "boardId": {
+      "type": "string",
+      "title": "Board id",
+      "description": "The board's number in its URL, for the Open in Jira link. Empty links to the project instead.",
+      "default": ""
+    },
+    "columns": {
+      "type": "string",
+      "title": "Columns",
+      "description": "Statuses in board order, comma-separated. Empty orders the statuses found by category (to do, in progress, done).",
+      "default": ""
+    },
+    "doneDays": {
+      "type": "number",
+      "title": "Days of Done",
+      "description": "How many days back the Done column reaches. 0 hides finished work.",
+      "default": 14
+    },
+    "jql": {
+      "type": "string",
+      "title": "Extra JQL",
+      "description": "A clause ANDed onto the board's query, e.g. labels = frontend.",
+      "default": ""
+    },
+    "refreshSeconds": {
+      "type": "number",
+      "title": "Refresh every (seconds)",
+      "description": "How often an open board re-reads Jira. Nothing is fetched while the pane is closed.",
+      "default": 60
+    },
+    "openOnStart": {
+      "type": "boolean",
+      "title": "Open on session start",
+      "description": "Open the board when a session starts. It docks only where the terminal is wide enough; /jira opens it anywhere.",
+      "default": false
+    },
+    "mcpServer": {
+      "type": "string",
+      "title": "Atlassian MCP server",
+      "description": "The MCP server to read Jira through, as /mcp names it. Empty finds whichever connected server has the Jira search tool.",
+      "default": ""
+    }
+  }
+}

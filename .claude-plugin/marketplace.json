@@ -1,0 +1,12 @@
+{
+  "name": "uplift-jira-board",
+  "owner": {
+    "name": "Uplift Foundation"
+  },
+  "plugins": [
+    {
+      "name": "jira-board",
+      "source": "./"
+    }
+  ]
+}
